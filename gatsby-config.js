@@ -13,6 +13,20 @@ module.exports = {
             },
         },
         {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `articles`,
+                path: `${__dirname}/src/markdown-pages/articles`,
+            },
+        },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `formations`,
+                path: `${__dirname}/src/markdown-pages/formations`,
+            },
+        },
+        {
             resolve: 'gatsby-plugin-typography',
             options: {
                 pathToConfigModule: 'src/utils/typography',
