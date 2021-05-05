@@ -1,3 +1,7 @@
+require("dotenv").config({
+    path: `.env.${process.env.NODE_ENV}`
+})
+
 module.exports = {
     siteMetadata: {
         title: `Laurent Benazet`,
@@ -5,6 +9,13 @@ module.exports = {
         author: `@LaurentBenazet`,
     },
     plugins: [
+        `gatsby-plugin-material-ui`,
+        {
+            resolve: 'gatsby-plugin-mailchimp',
+            options: {
+                endpoint: process.env.MAILCHIMP_ENDPOINT,
+            },
+        },
         {
             resolve: `gatsby-source-filesystem`,
             options: {
